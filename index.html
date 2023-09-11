@@ -59,6 +59,7 @@
   <audio data-key="76" src="sounds/hit 10.wav"></audio>
 
 <script>
+
     window.addEventListener('keydown', function (e) {
         const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
         const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
@@ -67,6 +68,14 @@
         audio.play();
         key.classList.add('playing');
     });
+
+    function removeTransition(e) {
+        
+    }
+
+    const keys = document.querySelectorAll('.key');
+    keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+
 </script>
 
 
